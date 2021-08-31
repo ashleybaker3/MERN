@@ -33,13 +33,19 @@ class Effect extends Card {
     }
 
     useCard(target) {
-        if(this.stat == "res") {
-            target.res += this.magnitude;
+        if(target instanceof Unit){
+            if(this.stat == "res") {
+                target.res += this.magnitude;
+            }
+            else if(this.stat == "power") {
+                target.power += this.magnitude;
+            }
+            console.log(this.text);
+            return target.showStats();
         }
-        else if(this.stat == "power") {
-            target.power += this.magnitude;
+        else {
+            throw new Error( "Target must be a unit!" );
         }
-        return target.showStats();
     }
 }
 
