@@ -1,15 +1,15 @@
 import React from "react";
 
 const Results = (props) => {
-    const { firstName, lastName, email, password, confirm } = props.data;
+
 
     return (
         <div>
-            <p>First Name: {firstName}</p>
-            <p>Last Name: {lastName}</p>
-            <p>Email: {email}</p>
-            <p>Password: {password}</p>
-            <p>Confrim Password: {confirm}</p>
+            <p>First Name: {props.firstName}</p>
+            <p>Last Name: {props.lastName}</p>
+            <p>Email: {props.email}</p>
+            <p>Password: {props.password}</p>
+            <p>Confrim Password: {props.confirm}</p>
         </div>
     )
 }
