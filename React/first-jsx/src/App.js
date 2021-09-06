@@ -5,7 +5,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <h1 className="Title text-primary">Hello Dojo!</h1>
+      
       <h3 className="Subheading text-decoration-none">Things I need to do:</h3>
       <ul className="list-group list-group-flush">
         <li className="list-group-item">Learn React</li>
