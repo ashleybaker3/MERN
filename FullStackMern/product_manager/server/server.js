@@ -2,13 +2,14 @@ const express = require('express');
 const app = express();
 const cors = require('cors')
 const port = 8000;
-require('./server/config/mongoose.config');
+
+const db_name = "product_manager"
+require("./config/mongoose.config")(db_name);
 
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
-require('./server/routes/product.routes')(app);
+require('./routes/product.routes')(app);
 app.listen(port, () => {
     console.log("Listening at Port 8000")
 })

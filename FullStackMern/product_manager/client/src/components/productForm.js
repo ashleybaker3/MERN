@@ -9,7 +9,7 @@ const PForm = () => {
     const onSubmitHandler = (e) => {
         e.preventDefault();
 
-        axios.post('http://localhost:8000/api/products', {
+        axios.post('http://localhost:8000/api/products/create', {
             title,
             price,
             description
