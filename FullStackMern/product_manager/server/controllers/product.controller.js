@@ -30,3 +30,25 @@ module.exports.getOneProduct = (req, res) => {
             res.status(400).json(err);
         });
 }
+
+module.exports.updateProduct = (req, res) => {
+    console.log("updateProduct method executed");
+    Product.findByIdAndUpdate(req.params.id, req.body, { new: true })
+        .then((product) => {
+            res.json(product);
+        })
+        .catch((err) => {
+            res.status(400).json(err);
+        });
+}
+
+module.exports.deleteProduct = (req, res) => {
+    console.log("deleteProduct method executed");
+    Product.findByIdAndDelete(req.params.id) 
+        .then((product) => {
+            res.json(product);
+        })
+        .catch((err) => {
+            res.status(400).json(err);
+        })
+}
